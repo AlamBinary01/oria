@@ -8,6 +8,7 @@ const oriaCheck= require("./api/routes/oriaCheck")
 const errorHandler= require("./api/middleware/errorHandling")
 const port= process.env.PORT
 const loginGoogle= require("./api/routes/loginGoogle")
+const chatbot= require("./api/routes/chatbot")
 const cors = require('cors'); // Import the cors module
 app.use(cors()); // Use the cors middleware
 
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/user", userRoutes);
 app.use("/oria", oriaCheck);
+app.use("/chat",chatbot);
 app.use("/",loginGoogle)
 
 // Start the server
